@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Floating Navbar -->
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">GlobalTrade</a>
+        <div class="nav-links">
+            <a href="#">Platform ></a>
+            <a href="#">Solutions ></a>
+            <a href="#">Resources ></a>
+            <a href="#">Company ></a>
+        </div>
+        <div class="nav-buttons">
+            <a href="#" class="btn-pill btn-glass">Talk to Sales</a>
+            <a href="#" class="btn-pill">Experience GTI</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <!-- Decorative Ornament -->
+    <div class="ornament"></div>
+
+    <div class="hero-tag">India's Sovereign Trade Intelligence</div>
+
+    <h1>
+        AI for all <strong>Global Trade</strong><br>
+        <span style="font-size: 1.5rem; font-weight: 300; display: block; margin-top: 15px;">Built on sovereign compute.
+            Powered by frontier-class models.</span>
+    </h1>
+
+    <p>Delivering population-scale logistics & compliance impact.</p>
+
+    <!-- Search Widget Container -->
+    <div class="search-widget">
+        <form id="inputForm" onsubmit="event.preventDefault(); processInput();" style="width: 100%; display: flex;">
+            <div class="input-group">
+                <i class="fas fa-magic input-icon"></i>
+                <input type="text" id="userInput" placeholder="Ask anything about tariffs, HS codes, or logistics..."
+                    required>
+            </div>
+            <button type="submit" class="search-btn">Generate</button>
+        </form>
+    </div>
+</section>
+
+<!-- Main Results Area (Below Search) -->
+<div id="mainResults" class="results-container" style="display: none; margin-top: 30px;">
+    <div id="resultCard" class="result-card">
+        <!-- Content injected via JS -->
+    </div>
+</div>
+</section>
+
+<!-- Old Results Section Removed/Merged -->
+
+
+<!-- Floating Chat Widget -->
+<div class="chat-widget-container">
+    <!-- Chat Button -->
+    <button id="chatBtn" class="chat-btn" onclick="toggleChat()">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chatWindow" class="chat-window">
+        <div class="chat-header">
+            <span>AI Assistant</span>
+            <button onclick="toggleChat()" class="close-chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chatMessages" class="chat-messages">
+            <div class="message bot-message">
+                Hello! I'm your Global Trade AI. Ask me anything about HS codes, tariffs, or compliance.
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleChatEnter(event)">
+            <button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
