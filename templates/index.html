@@ -6,19 +6,22 @@
     <nav class="navbar">
         <a href="#" class="logo">GlobalTrade</a>
         <div class="nav-links">
-            <a href="#">Platform ></a>
-            <a href="#">Solutions ></a>
-            <a href="#">Resources ></a>
-            <a href="#">Company ></a>
+            <a href="#analysis">Trade Analysis</a>
+            <a href="#hs-lookup">HS Lookup</a>
+            <a href="#compliance">Compliance</a>
+            <a href="#routes">Trade Routes</a>
         </div>
         <div class="nav-buttons">
-            <a href="#" class="btn-pill btn-glass">Talk to Sales</a>
-            <a href="#" class="btn-pill">Experience GTI</a>
+            <a href="https://github.com/dhairyamittal28106-alt/global-trade-ai" target="_blank"
+                class="btn-pill btn-glass">
+                <i class="fab fa-github" style="margin-right:6px;"></i>GitHub
+            </a>
+            <a href="#analysis" class="btn-pill">Try Free →</a>
         </div>
     </nav>
 </header>
 
-<section class="hero">
+<section id="analysis" class="hero">
     <!-- Decorative Ornament -->
     <div class="ornament"></div>
 
@@ -38,7 +41,7 @@
             style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; align-items: end;">
 
             <!-- HS / HTS Code -->
-            <div style="display:flex; flex-direction:column; gap:7px;">
+            <div id="hs-lookup" style="display:flex; flex-direction:column; gap:7px;">
                 <div class="code-type-tabs">
                     <button type="button" class="code-tab active" onclick="switchCodeType('HS')">HS Code</button>
                     <button type="button" class="code-tab" onclick="switchCodeType('HTS')">HTS Code</button>
@@ -120,8 +123,8 @@
                 </ul>
             </div>
 
-            <!-- Submit Button (Full Width on Mobile, Span 2 on Grid if space) -->
-            <button type="submit" class="search-btn" style="grid-column: 1 / -1; margin-top: 10px;">
+            <!-- Submit Button -->
+            <button type="submit" id="compliance" class="search-btn" style="grid-column: 1 / -1; margin-top: 10px;">
                 Generate Analysis
             </button>
         </form>
@@ -131,6 +134,7 @@
 
 
 <!-- Map Visualization (Hidden by default) -->
+<div id="routes" style="display:none;"></div>
 <div id="mapContainer" class="map-visualization" style="display: none;">
     <h3 style="text-align: center; margin-bottom: 10px; color: var(--accent-black);">Logistics Route Preview</h3>
     <div class="map-wrapper">

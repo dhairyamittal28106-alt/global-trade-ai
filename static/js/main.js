@@ -1,3 +1,55 @@
+// ── Navbar smart navigation ──────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', e => {
+            const target = link.getAttribute('href');
+
+            if (target === '#hs-lookup') {
+                e.preventDefault();
+                document.getElementById('analysis')?.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    const input = document.getElementById('hsCode');
+                    if (input) {
+                        input.focus();
+                        input.style.outline = '2px solid #FF8C42';
+                        input.style.transition = 'outline 0.3s';
+                        setTimeout(() => { input.style.outline = ''; }, 1800);
+                    }
+                }, 500);
+            }
+
+            if (target === '#compliance') {
+                e.preventDefault();
+                document.getElementById('analysis')?.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    const btn = document.getElementById('compliance');
+                    if (btn) {
+                        btn.style.transform = 'scale(1.04)';
+                        btn.style.boxShadow = '0 0 0 4px rgba(255,140,66,0.4)';
+                        setTimeout(() => {
+                            btn.style.transform = '';
+                            btn.style.boxShadow = '';
+                        }, 1200);
+                    }
+                }, 500);
+            }
+
+            if (target === '#routes') {
+                e.preventDefault();
+                const map = document.getElementById('mapContainer');
+                if (map && map.style.display !== 'none') {
+                    map.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Map is hidden — scroll to analysis form to prompt user
+                    document.getElementById('analysis')?.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+
+// ── End navbar handler ───────────────────────────────────────────
+
 let isChatOpen = false;
 
 function toggleChat() {

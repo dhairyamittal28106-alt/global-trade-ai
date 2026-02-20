@@ -12,6 +12,10 @@
     --radius-card: 24px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -395,8 +399,8 @@ header {
     position: absolute;
     bottom: 80px;
     right: 0;
-    width: 400px;
-    height: 600px;
+    width: 320px;
+    height: 460px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
