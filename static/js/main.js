@@ -1,3 +1,9 @@
+// Mobile Menu Toggle
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+
 // ── Navbar smart navigation ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-links a').forEach(link => {
